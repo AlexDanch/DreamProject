@@ -1,0 +1,12 @@
+<component name="HomeScreen" extends="Group" >
+
+  <interface>
+  </interface>
+
+  <children>
+     
+  </children>
+
+  <script type="text/brightscript" uri="HomeScreen.brs" />
+
+</component>

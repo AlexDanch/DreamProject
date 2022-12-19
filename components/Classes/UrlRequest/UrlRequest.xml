@@ -1,0 +1,13 @@
+<component name="UrlRequest" extends="Task">
+    <script type="text/brightscript" uri="UrlRequest.brs" />
+    
+    <interface>
+        <field id="request" type="string" value="postRequest" onChange="_onChange" />
+        <field id="url" type="string" />
+        <field id="body" type="assocarray" />
+        <field id="arrayBody" type="array" />
+        <field id="error" alwaysNotify="true" type="assocarray" />
+        <field id="response" alwaysNotify="true" type="assocarray" />
+        <field id="arrayResponse" alwaysNotify="true" type="array" />
+    </interface>
+</component>

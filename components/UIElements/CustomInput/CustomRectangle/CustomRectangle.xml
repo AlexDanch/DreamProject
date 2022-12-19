@@ -1,0 +1,15 @@
+<component name="CustomRectangle" extends="Group">
+
+    <interface>
+       <field id="rectWidth" type="float" />
+    </interface>
+
+    <children>
+         <Rectangle id="secodaryBg" translation="[0, 2]" width="700" height="3px" color="#b7410e" />
+         <Rectangle id="mainBg"  width="700" height="5px" color="#960018" />
+    </children>
+
+    <script type="text/brightscript" uri="CustomRectangle.brs" />
+
+</component>
+

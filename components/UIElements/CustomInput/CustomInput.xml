@@ -1,0 +1,21 @@
+<component name="CustomInput" extends="Label">
+
+    <interface>
+        <field id="fontSize" type="integer" alias="inputText.fontSize" />
+        <field id="text" type="string" alias="inputText.text" />
+        <field id="lineOpacity" type="float" alias="customRect.opacity" />
+        <field id="createKeyboard" type="boolean" alwaysNotify="true" />
+    </interface>
+
+    <children> 
+        <LayoutGroup id="mainGroup" itemSpacings="[7.0]"> 
+             <CustomLable id="inputText"  fontSize="33"  />
+             <CustomRectangle id="customRect" opacity="0" />
+        </LayoutGroup>
+        <Animation id="opacityAnimation" duration="0.5"  easeFunction="linear" >
+           <FloatFieldInterpolator  id = "floatInterpolator" key="[0, 1]" keyValue="[0, 1]" fieldToInterp="customRect.opacity" />
+        </Animation>
+    </children>
+    <script type="text/brightscript" uri="CustomInput.brs" />
+</component>
+

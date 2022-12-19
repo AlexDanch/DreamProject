@@ -1,0 +1,42 @@
+<component name="LoginScreen" extends="Group" initialFocus="login_block" >
+
+  <interface>
+    <field id="inputText" type="string" />
+    
+  </interface>
+ 
+  <children>
+  <Poster id="loginBg" width="1920" height="1080" uri="pkg:/images/loginBG.png" />
+    <FocusableLayoutGroup id="login_block" layoutDirection="vert" translation="[100, 166]"  itemSpacings="[79.0, 40.0, 70.0, 13.0, 25.0]" focusable="true">
+        <Poster id="logo" uri="pkg:/images/logo.png" width="130" height="180" focusable="false" />
+        <CustomLable id="hg" fontSize="55"  text="SIGN IN WITH YOUR NINJA ID" />
+        <CustomInput id="login" text="Enter Your Ninja Login" fontSize="30" focusable="true" />
+        <CustomInput id="password" text="Enter Your Ninja Password"  focusable="true" />
+        <CustomLable id="loginHighlight" fontSize="20" text="making excuses for being late, as usual* Hello students, today I got lost on the road of life." />
+        <FocusableLayoutGroup id="buttonLayout" layoutDirection="horiz" itemSpacings="[50.0]" focusable="true" >
+          <CustomButton id="signinBtn" buttonText="SIGN IN" focusable="true" />
+          <CustomButton id="signupBtn" buttonText="SIGN UP" focusable="true"  />
+        </FocusableLayoutGroup>
+    </FocusableLayoutGroup>
+     <Poster id="firstKunai" translation="[115, 167 ]" width="50" height="50" uri="pkg:/images/kunai.png" />
+     <Poster id="secondKunai" translation="[130, 225 ]" width="50" height="50" uri="pkg:/images/kunai.png" />
+     <Poster id="thirdKunai" translation="[150, 288 ]" width="50" height="50" uri="pkg:/images/kunai.png" />
+       <ParallelAnimation id="testParallelAnimation" > 
+          <Animation id = "R1Animation" duration = "2" easeFunction = "linear" >
+              <Vector2DFieldInterpolator key= "[0, 0.5, 1]" keyValue= "[ [1, 1], [1, 2], [1, 1] ]" fieldToInterp="R1.scale" /> 
+              <FloatFieldInterpolator key= "[0, 0.5, 1]" keyValue= "[ 0.2, 1, 0.2 ]" fieldToInterp="R1.opacity" />
+           </Animation>
+           <Animation  id = "R2Animation" duration = "2" easeFunction = "linear" > 
+              <Vector2DFieldInterpolator key= "[0, 0.5, 1]" keyValue= "[ [1, 1], [1, 2], [1, 1] ]" fieldToInterp="R2.scale" />
+              <FloatFieldInterpolator    key= "[0, 0.5, 1]" keyValue= "[ 0.2, 1, 0.2 ]"    fieldToInterp="R2.opacity" />
+           </Animation>
+           <Animation  id = "R3Animation" duration = "2" easeFunction = "linear" > 
+              <Vector2DFieldInterpolator key= "[0, 0.5, 1]"    keyValue= "[ [1, 1], [1, 2], [1, 1] ]" fieldToInterp="R3.scale" />
+              <FloatFieldInterpolator key= "[0, 0.5, 1]" keyValue= "[ 0.2, 1, 0.2 ]" fieldToInterp="R3.opacity" />
+            </Animation>
+    </ParallelAnimation>
+  </children>
+
+  <script type="text/brightscript" uri="LoginScreen.brs" />
+
+</component>
