@@ -1,0 +1,13 @@
+<component name="CustomRowList" extends="Group" >
+
+  <interface>
+       <field id="content" type="assocarray" onChange="populateContentNode" />
+  </interface>
+  
+  <children>
+      
+  </children>
+
+  <script type="text/brightscript" uri="CustomRowList.brs" />
+
+</component>

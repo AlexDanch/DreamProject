@@ -1,8 +1,5 @@
 
-
-<!--********** Copyright 2016 Roku Corp.  All Rights Reserved. **********-->
-
-<component name="LoginBtn" extends="Group">
+<component name="CustomnPanel" extends="Group">
     <interface>
   	</interface>
 
@@ -12,6 +9,6 @@
             <CustomLabel id="loginElements_text" fontSize="25" />
       </children>
 
-      <script type="text/brightscript" uri="LoginBtn.brs" />
+      <script type="text/brightscript" uri="CustomPanel.brs" />
 
 </component>
