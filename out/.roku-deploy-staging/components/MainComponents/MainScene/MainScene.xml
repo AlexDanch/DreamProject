@@ -1,9 +1,0 @@
-<component name="MainScene" extends="Scene">
-    <interface></interface>
-
-    <children>
-       <LoginScreen id="loginScreen" />
-    </children>
-
-    <script type="text/brightscript" uri="MainScene.brs" />
-</component>
