@@ -1,7 +1,7 @@
 sub init()
    m.requstObj = {
-      login: "a@a.com"
-      password: "Password"
+      login: ""
+      password: ""
    }
    subViews()
    observeFields()
@@ -44,8 +44,6 @@ end sub
 sub onLoginResponseRecived(event)
       loginResponseRecieve = event.getData()
       if loginResponseRecieve.success 
-STOP
-         
          m.top.userLoggin = true
       end if
 end sub
