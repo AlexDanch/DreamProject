@@ -13,7 +13,7 @@ Sub onFocusedChild()
         foc = m.top.focusedChild
         if m.debug AND foc <> invalid then ?"focused now="foc.id
         if m.currentFocusedNode = invalid ANd m.top.getchildCount() > 0 AND (m.top.focusedChild = invalid OR m.top.issameNode(m.top.focusedChild))
-            firstFocusableChild = GetFirstFocusable(0, 1)
+            firstFocusableChild = GetFirstFocusable(0, 2)
             if m.debug then ?"set focus to first focusable"
             if firstFocusableChild <> invalid
                 if m.debug then ?"firstFocusableChild.setFocus(true)"
@@ -41,14 +41,16 @@ end sub
 
 function onKeyEvent(key as String, press as Boolean) as Boolean
     handled = false
-
     if press AND m.currentFocusedNode <> invalid AND m.buttonsTohandle[key] <> invalid
         if m.top.getchildCount() > 0 then
             childCount = m.top.getchildCount()
+            ? "childCount" childCount
             for index = 0 to childCount - 1
                 child = m.top.getChild(index)
+                ? "child" child
                 if child <> invalid AND m.currentFocusedNode.isSameNode(child)
                     indexToMove = index + m.buttonsTohandle[key]
+                    ? "indexToMove" indexToMove
                     if m.debug then
                         ?"!index="index
                         ?"!indexToMove="indexToMove
