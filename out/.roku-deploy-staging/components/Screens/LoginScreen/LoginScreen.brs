@@ -44,6 +44,7 @@ end sub
 sub onLoginResponseRecived(event)
       loginResponseRecieve = event.getData()
       if loginResponseRecieve.success 
+STOP
          
          m.top.userLoggin = true
       end if

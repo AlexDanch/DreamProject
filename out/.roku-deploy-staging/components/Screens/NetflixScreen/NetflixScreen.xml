@@ -1,0 +1,13 @@
+<component name="NetflixScreen" extends="Group" >
+
+  <interface>
+  
+  </interface>
+  
+  <children>
+      <AppleScreen />
+  </children>
+
+  <script type="text/brightscript" uri="NetlixScreen.brs" />
+
+</component>

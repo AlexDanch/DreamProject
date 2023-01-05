@@ -1,0 +1,16 @@
+<component name="CustomMenuItem" extends="Group">
+    <interface>
+      <field id="width" type="float"   />
+      <field id="height" type="float"  />
+      <field id="itemContent" type="node" onChange="displayContent" />
+    </interface>
+  
+    <children>
+         <Poster id="elementBg"  >
+            <CustomLable id="elementTex" fontSize="26" color="#ff2400" />
+         </Poster>
+    </children>
+    
+    <script type="text/brightscript" uri="CustomMenuItem.brs" />
+</component>
+
