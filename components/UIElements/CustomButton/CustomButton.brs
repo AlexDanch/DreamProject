@@ -1,4 +1,5 @@
 sub init()
+    m.top.focusable = true
     m.background = m.top.findNode("background")
     m.btnText = m.top.findNode("button_text")
     m.top.observeField("focusedChild", "onFocusedChild")

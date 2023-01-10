@@ -2,9 +2,9 @@
     <interface>
       <field id="itemContent" type="assocArray" onChange="displayContent" />
     </interface>
-  
+    
     <children>
-         <Poster id="elementBg" width="600" height="400" uri="pkg:/images/loginBG.png" /> 
+         <Poster id="elementBg" width="300" height="300" uri="pkg:/images/buttonBg.png" /> 
     </children>
 
     <script type="text/brightscript" uri="CustomRowListElement.brs" />

@@ -1,7 +1,7 @@
 sub init()
    m.requstObj = {
-      login: ""
-      password: ""
+      login: "a@a.com"
+      password: "Password"
    }
    subViews()
    observeFields()
@@ -33,7 +33,7 @@ sub onBtnSignInPressed()
 end sub
 
 sub setUpPostRequest()
-   ? " m.requstObj"  m.requstObj
+   ? "m.requstObj"  m.requstObj
    m.urlRequest = CreateObject("roSgNode", "UrlRequest")
    m.urlRequest.observeField("response", "onLoginResponseRecived")
    m.urlRequest.url = "https://43847d26-a572-4b8f-8dd4-65f5f1a82598.mock.pstmn.io/login"
@@ -44,7 +44,12 @@ end sub
 sub onLoginResponseRecived(event)
       loginResponseRecieve = event.getData()
       if loginResponseRecieve.success 
-         m.top.userLoggin = true
+         if IsString(loginResponseRecieve.accessToken)
+           RegWrite("acssesToken",  loginResponseRecieve.accessToken)
+           m.top.userLoggin = true
+         else
+            m.errorMsg.text = "You have one part wrong"
+         end if
       end if
 end sub
 

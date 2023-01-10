@@ -5,7 +5,7 @@
   </interface>
   
   <children>
-      <Poster id="background" width="1920" height="1080"  />
+      <Poster id="background" width="1920" height="1080" uri="pkg:/images/netflixBG.jpeg"  />
   </children>
 
   <script type="text/brightscript" uri="AppleScreen.brs" />

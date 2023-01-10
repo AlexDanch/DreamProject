@@ -5,7 +5,7 @@
 
     <children>
        <Poster id="menu_Bg" width="800" height="72" uri="pkg:/images/buttonBg.png" blendColor="#0000ff" > 
-          <RowList id="menuList" itemComponentName="CustomMenuItem"   itemSize="[800, 920]"  rowHeights="[72.0]"   vertFocusAnimationStyle="floatingFocus" rowFocusAnimationStyle="floatingFocus" focusable="true"  numRows="1" drawFocusFeedback="true" />
+          <RowList id="menuList" itemComponentName="CustomMenuItem" itemSize="[800, 920]"  rowHeights="[72.0]"   vertFocusAnimationStyle="floatingFocus" rowFocusAnimationStyle="floatingFocus" focusable="true"  numRows="1" drawFocusFeedback="true" />
        </Poster>
     </children>
 

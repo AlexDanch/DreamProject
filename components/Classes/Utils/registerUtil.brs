@@ -3,28 +3,28 @@
 ' ******************************************************
 
 function RegRead(key, section = invalid)
-    if section = invalid then section = "InStat"
+    if section = invalid then section = "DreamProject"
     sec = CreateObject("roRegistrySection", section)
     if sec.Exists(key)
-        return parseJson(sec.Read(key))
+        return true
     end if
-    return invalid
+    return false
 end function
 
 function RegReadMulti(arr, section = invalid)
-    if section = invalid then section = "InStat"
+    if section = invalid then section = "DreamProject"
     sec = CreateObject("roRegistrySection", section)
     return sec.ReadMulti(arr)
 end function
 
 function RegWrite(key, val, section = invalid)
-    if section = invalid then section = "InStat"
+    if section = invalid then section = "DreamProject"
     sec = CreateObject("roRegistrySection", section)
     sec.Write(key, val)
     sec.Flush()
 end function
 
-function RegWriteMulti(obj, section = "InStat")
+function RegWriteMulti(obj, section = "DreamProject")
     sec = CreateObject("roRegistrySection", section)
     for each key in obj
         obj[key] = FormatJson(obj[key], 1)
@@ -33,7 +33,7 @@ function RegWriteMulti(obj, section = "InStat")
     sec.Flush()
 end function
 
-function RegDelete(key = invalid, section = "InStat")
+function RegDelete(key = invalid, section = "DreamProject")
     if key = invalid
         sec = CreateObject("roRegistry")
         sec.Delete(section)

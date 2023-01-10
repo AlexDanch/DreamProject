@@ -1,12 +1,18 @@
-<component name="HomeScreen" extends="Group" >
+<component name="HomeScreen" initialFocus="exitScr" extends="Group" >
 
   <interface>
-  
+     <field id="exitUser" type="boolean" alias="exitScr.exitUser" />
   </interface>
   
   <children>
-      <AppleScreen />
+   <ExitScreen id="exitScr" />
+       
+   <Animation id = "screenApeareAnimation" duration = "1" easeFunction = "linear" >
+       <FloatFieldInterpolator key = "[ 0.0, 0.5, 1.0 ]" keyValue = "[ 1.0, 0.0, 1.0 ]" ieldToInterp = "examplePoster.opacity" />
+  </Animation>
   </children>
+
+  
 
   <script type="text/brightscript" uri="HomeScreen.brs" />
 </component>

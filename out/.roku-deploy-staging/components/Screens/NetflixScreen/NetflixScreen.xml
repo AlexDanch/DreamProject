@@ -5,7 +5,7 @@
   </interface>
   
   <children>
-      <AppleScreen />
+      <AppleScreen id="sss" />
   </children>
 
   <script type="text/brightscript" uri="NetlixScreen.brs" />

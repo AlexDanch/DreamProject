@@ -1,0 +1,15 @@
+<component name="ExitScreen" initialFocus="exit" extends="Group" >
+
+  <interface>
+       <field id="exitUser" type="boolean" alias="exit.exitUser" />
+  </interface>
+  
+  <children>
+       <Poster id="background" width="1920" height="1080" uri="pkg:/images/exitBg.jpg">
+          <ExitView id="exit" />
+       </Poster>
+  </children>
+
+  <script type="text/brightscript" uri="ExitScreen.brs" />
+
+</component>
