@@ -1,4 +1,4 @@
-<component name="HomeScreen" initialFocus="exitScr" extends="Group" >
+<component name="HomeScreen"  extends="Group" >
 
   <interface>
      <field id="exitUser" type="boolean" alias="exitScr.exitUser" />
@@ -6,13 +6,11 @@
   
   <children>
    <ExitScreen id="exitScr" />
-       
+   <CustomMenu id="menu" />
    <Animation id = "screenApeareAnimation" duration = "1" easeFunction = "linear" >
-       <FloatFieldInterpolator key = "[ 0.0, 0.5, 1.0 ]" keyValue = "[ 1.0, 0.0, 1.0 ]" ieldToInterp = "examplePoster.opacity" />
+       <!-- <FloatFieldInterpolator id="dare" key = "[ 0.0, 0.5, 1.0 ]" keyValue = "[ 1.0, 0.0, 1.0 ]" ieldToInterp = "examplePoster.opacity" /> -->
   </Animation>
   </children>
-
-  
 
   <script type="text/brightscript" uri="HomeScreen.brs" />
 </component>

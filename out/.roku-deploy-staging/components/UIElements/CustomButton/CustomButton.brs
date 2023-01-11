@@ -6,8 +6,8 @@ sub init()
 end sub
 
 sub onCentrBtnText()
-    m.btnText.width = m.background.width
-    m.btnText.height = m.background.height
+    m.btnText.width = m.top.buttonWidth
+    m.btnText.height = m.top.buttonHeight
     m.btnText.horizAlign = "CENTER"
     m.btnText.vertAlign = "CENTER"
 end sub

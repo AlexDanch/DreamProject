@@ -13,17 +13,16 @@
         <CustomInput id="password"  hintText="Enter Your Ninja Password" focusable="true" />
         <CustomLable id="loginHighlight" fontSize="20" text="making excuses for being late, as usual* Hello students, today I got lost on the road of life." />
         <FocusableLayoutGroup id="buttonLayout" layoutDirection="horiz" itemSpacings="[50.0]" focusable="true" >
-          <CustomButton id="signinBtn" buttonText="SIGN IN" focusable="true" />
-          <CustomButton id="signupBtn" buttonText="SIGN UP" focusable="true" />
+          <CustomButton id="signinBtn"  buttonWidth="330" buttonHeight="92" buttonText="SIGN IN" />
+          <CustomButton id="signupBtn"  buttonWidth="330" buttonHeight="92"  buttonText="SIGN UP" />
         </FocusableLayoutGroup>
         <CustomLable id="errorMsg" fontSize="30" color="#ED2939" />
     </FocusableLayoutGroup>
-      <CustomRowList id="capota" />
   </children>
+  
   <script type="text/brightscript" uri="pkg:/components/Classes/Utils/validationUtils.brs" />
   <script type="text/brightscript" uri="pkg:/components/Classes/Utils/registerUtil.brs" />
   <script type="text/brightscript" uri="pkg:/components/Classes/Utils/typyUtils.brs" />
-
   <script type="text/brightscript" uri="LoginScreen.brs" />
 
 </component>

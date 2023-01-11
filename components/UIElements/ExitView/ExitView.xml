@@ -8,8 +8,8 @@
          <CustomLable id="hg" fontSize="33"  text="Exits" color="#ED2939" />
          <CustomLable id="describer" fontSize="33" text="Are you sure want to leave Ninja Channel?" color="#ED2939" />
          <FocusableLayoutGroup id="group" itemSpacings="[25.0]"  >
-              <CustomButton id="exitApply" buttonText="YES" buttonWidth="500" />
-              <CustomButton id="exitDecline" buttonText="NO" buttonWidth="500" />
+              <CustomButton id="exitApply" buttonText="YES" buttonWidth="500" buttonHeight="92" />
+              <CustomButton id="exitDecline" buttonText="NO" buttonWidth="500" buttonHeight="92" />
          </FocusableLayoutGroup>
          <CustomLable id="decision" visible="false" fontSize="40" text="You made right choose" color="#006400" />
         </LayoutGroup>

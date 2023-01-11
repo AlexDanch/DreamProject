@@ -4,16 +4,18 @@
 
 <component name="CustomButton" extends="Group">
     <interface>
-       <field id="buttonText" type="string" alias="button_text.text" onChange="onCentrBtnText" />
-       <field id="buttonWidth" type="float" alias="background.width" value="330" onChange="onCentrBtnText"  />
-       <field id="buttonHeight" type="float" alias="background.height" value="92" />
+       <field id="buttonOpacity" type="float" alias="background.opacity" />
+       <field id="buttonText" type="string" alias="button_text.text"  />
+       <field id="buttonWidth" type="float" alias="background.width"    />
+       <field id="buttonHeight" type="float" alias="background.height" onChange="onCentrBtnText"  />
+       <field id="fontSize" type="int" alias="button_text.fontSize" value="33"    />
+       <field id="centerBtn" type="boolean" alwaysNotify="true"   />
        <field id="color" type="string" alias="button_text.color" value="#FFFFFF" />
        <field id="itemSelected" type="boolean" alwaysNotify="true"  />
      </interface>
       <children>  
-            <Poster id="background"  uri="pkg:/images/buttonBg.png" blendColor="#b7410e" > 
-              <CustomLable id="button_text" color="#800080" fontSize="33" />
-            </Poster>
+            <Poster id="background"  uri="pkg:/images/buttonBg.png" blendColor="#b7410e" /> 
+            <CustomLable id="button_text"  />
       </children>
 
       <script type="text/brightscript" uri="CustomButton.brs" />

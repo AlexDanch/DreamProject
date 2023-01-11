@@ -46,6 +46,7 @@
     	<!-- @Public -->
         <!-- Tells if pressing down on last child should set focus to first and vise versa -->
         <field id="allowCarousel" type="bool" value="true" />
+        
         <!-- @Public -->
         <!-- Tells the component if it should handle up/down or right/left key presses
         	@PossibleValue horiz - children are positioned in a row from left to right - so handle left/right key presses

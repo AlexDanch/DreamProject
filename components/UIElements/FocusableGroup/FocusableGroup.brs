@@ -44,13 +44,12 @@ function onKeyEvent(key as String, press as Boolean) as Boolean
     if press AND m.currentFocusedNode <> invalid AND m.buttonsTohandle[key] <> invalid
         if m.top.getchildCount() > 0 then
             childCount = m.top.getchildCount()
-            ? "childCount" childCount
             for index = 0 to childCount - 1
                 child = m.top.getChild(index)
-                ? "child" child
                 if child <> invalid AND m.currentFocusedNode.isSameNode(child)
+                    m.top.moveDirection = key
                     indexToMove = index + m.buttonsTohandle[key]
-                    ? "indexToMove" indexToMove
+                    m.top.indexToMove = indexToMove
                     if m.debug then
                         ?"!index="index
                         ?"!indexToMove="indexToMove
@@ -58,6 +57,7 @@ function onKeyEvent(key as String, press as Boolean) as Boolean
                     if (indexToMove >= 0 AND indexToMove < childCount) or m.top.allowCarousel
                         if indexToMove < 0 then
                             index = childCount - 1
+                        
                         else if indexToMove >= childCount
                             index = 0
                         end if

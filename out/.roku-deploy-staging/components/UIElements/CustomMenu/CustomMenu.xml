@@ -1,15 +1,22 @@
-<component name="CustomMenu" extends="Group">
+<component name="CustomMenu"   extends="Group">
 
     <interface>
+      <field id="content" type="assocarray" />
+      <field id="indexToMove" alias="elementLayout.indexToMove" type="integer" onChange="_moveFocusMirror" />
+      <field id="moveDirection" alias="elementLayout.moveDirection" type="string" alwaysNotify="true" />
     </interface>
 
     <children>
-       <Poster id="menu_Bg" width="800" height="72" uri="pkg:/images/buttonBg.png" blendColor="#0000ff" > 
-          <RowList id="menuList" itemComponentName="CustomMenuItem" itemSize="[800, 920]"  rowHeights="[72.0]"   vertFocusAnimationStyle="floatingFocus" rowFocusAnimationStyle="floatingFocus" focusable="true"  numRows="1" drawFocusFeedback="true" />
-       </Poster>
+       <Poster id="menu_Bg"  uri="pkg:/images/buttonBg.png" blendColor="#800080" opacity="0.6" /> 
+       <Poster id="focusMirror" uri="pkg:/images/focusMirror.png"   />
+          <FocusableLayoutGroup id="elementLayout" layoutDirection="horiz" itemSpacings="[0]">
+                 
+          </FocusableLayoutGroup>
+      <Animation id="translationAnimation" duration="0.1"  easeFunction="inCubic" >
+        <Vector2DFieldInterpolator id = "transInterpolator" key="[0.0, 1.0]"  fieldToInterp="focusMirror.translation" />
+      </Animation>
     </children>
 
     <script type="text/brightscript" uri="CustomMenu.brs" />
 
 </component>
-

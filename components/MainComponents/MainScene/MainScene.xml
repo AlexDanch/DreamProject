@@ -1,10 +1,10 @@
 <component name="MainScene" extends="Scene">
     <interface>
-      <!-- <field id="userLoggin" type="boolean" alias="loginScreen.userLoggin" onChange="appendHomeScreen"   /> -->
+  
     </interface>
 
     <children>
-       <!-- <LoginScreen id="loginScreen" /> -->
+     
     </children>
 
     <script type="text/brightscript" uri="MainScene.brs" />

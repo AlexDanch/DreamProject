@@ -33,7 +33,6 @@ sub onBtnSignInPressed()
 end sub
 
 sub setUpPostRequest()
-   ? "m.requstObj"  m.requstObj
    m.urlRequest = CreateObject("roSgNode", "UrlRequest")
    m.urlRequest.observeField("response", "onLoginResponseRecived")
    m.urlRequest.url = "https://43847d26-a572-4b8f-8dd4-65f5f1a82598.mock.pstmn.io/login"

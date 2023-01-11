@@ -3,6 +3,8 @@
 <component name="FocusableLayoutGroup" extends="LayoutGroup" xsi:noNamespaceSchemaLocation="https://devtools.web.roku.com/schema/RokuSceneGraph.xsd">
     <interface>
         <field id="allowCarousel" type="bool" value="false"/>
+        <field id="indexToMove" type="integer" alwaysNotify="true" />
+        <field id="moveDirection" type="string" alwaysNotify="true" />
     </interface>
     <script type="text/brightscript" uri="FocusableGroup.brs"/>
 </component>
