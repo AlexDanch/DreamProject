@@ -3,9 +3,9 @@ sub init()
     initViews()
     m.dataSource = [
         {screenName: "AppleAplePAsdasda"}
-        {screenName: "Netflix"}
-        {screenName: "NBA"}
-        {screenName: "Setting"}
+        {screenName: "Netflixxcad"}
+        {screenName: "NBAddfsfs"}
+        {screenName: "Settingsdafda"}
     ]
     _populateMenu()
     _centerMenu()
@@ -29,7 +29,7 @@ sub _onStateChange(event)
     end if
 end sub
 
-sub sss()
+sub _changeMenuElementsOp()
     m._focusMirror.opacity = 0
     childCount = m._elementLayout.getChildCount()
     children = m._elementLayout.getChildren(childCount, 0)
@@ -41,11 +41,10 @@ sub sss()
      end for
 end sub
 sub onFocusedChild()
-    ? "onFocusChild"
     if m.top.hasFocus()
         childCount = m._elementLayout.getChildCount()
         children = m._elementLayout.getChildren(childCount, 0)
-           for each item in  children
+           for each item in children
              item.buttonOpacity = 0
            end for
        m.count = m._elementLayout.getChildCount() 
@@ -80,27 +79,21 @@ end sub
 
 sub _leftSwing()
    index = m._index 
-   ? "index" index
    if index < 0
     index = 0
    end if
     stepMove =  m._focusMirror.translation[0] - m._buttonSizes[index]
-    ?"leftStepMove" stepMove
    _animatePoster(stepMove)
 end sub
 
 sub _rightSwing()
     stepMove =  m._focusMirror.translation[0] + m._buttonSizes[m._index - 1]
     _animatePoster(stepMove)
-    ? "rightSwing" stepMove
 end sub
 
 sub  _animatePoster(moveStep)
-    ?"m._index" m._index
-    if m._index = 0
-    end if
     trans = m._focusMirror.translation
-    m._transInterpolator.keyValue = [trans , [moveStep , 0 ]]
+    m._transInterpolator.keyValue = [trans , [moveStep , -5 ]]
     m._widthInterpolator.keyValue = [m._focusMirror.width, m._buttonSizes[m._index]]
     m._translationAnimation.control = "start"
 end sub
@@ -114,6 +107,7 @@ sub _populateMenu()
         menuElement = CreateObject("roSGNode", "CustomButton")
         menuElement.setFields({
             "color": "#ED2939"
+            "backgroundUri" : "pkg:/images/ninePaths/buttonnine.9.png"
             "buttonOpacity": 0
             "buttonWidth": m._buttonSizes[counter]
             "buttonHeight": 72
@@ -130,7 +124,6 @@ sub _centerMenu()
    layoutSizes = m._elementLayout.boundingRect()
    m._menuBg.width = layoutSizes.width + 200
    m._menuBg.height = layoutSizes.height + 10
-   
    sizes = m.top.boundingRect()
    m.top.translation = [(1920 - sizes.width) / 2, 50]
    m._elementLayout.translation = [(sizes.width - layoutSizes.width) / 2 , (m._menuBg.height - layoutSizes.height) / 2]
@@ -151,17 +144,15 @@ end function
 
 sub _setFocusMirror(buttonSize)
     m._focusMirror.width = buttonSize
-    m._focusMirror.height = 72 + 10
-    m._focusMirror.translation = [100, 0]
-    m._focusMirror.scaleRotateCenter = [m._focusMirror.width / 2, m._focusMirror.height / 2 ]
-    m._focusMirror.scale = [1, 1.1]
+    m._focusMirror.height = 72 + 10 +10
+    m._focusMirror.translation = [100, -5]
 end sub
 
 function onKeyEvent(key as String, press as Boolean) as Boolean
     handled = false
     if not press 
       if (key = "down") then
-        sss()
+        _changeMenuElementsOp()
         m.clean = false
         m._focusMirror.setFocus(true)
       else if key = "up"

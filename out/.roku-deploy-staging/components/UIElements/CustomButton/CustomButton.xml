@@ -4,6 +4,7 @@
 
 <component name="CustomButton" extends="Group">
     <interface>
+       <field id="backgroundUri" type="string" alias="background.uri" value="pkg:/images/ninePaths/focusmirror_1.9.png" />
        <field id="buttonOpacity" type="float" alias="background.opacity" />
        <field id="buttonText" type="string" alias="button_text.text"  />
        <field id="buttonWidth" type="float" alias="background.width"    />
@@ -14,7 +15,7 @@
        <field id="itemSelected" type="boolean" alwaysNotify="true"  />
      </interface>
       <children>  
-            <Poster id="background" uri="pkg:/images/ninePaths/focusmirror_1.9.png" blendColor="#b7410e" /> 
+            <Poster id="background" blendColor="#b7410e" /> 
             <CustomLable id="button_text"  />
       </children>
 
