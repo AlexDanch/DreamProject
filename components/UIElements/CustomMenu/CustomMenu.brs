@@ -100,7 +100,6 @@ sub  _animatePoster(moveStep)
     if m._index = 0
     end if
     trans = m._focusMirror.translation
-    
     m._transInterpolator.keyValue = [trans , [moveStep , 0 ]]
     m._widthInterpolator.keyValue = [m._focusMirror.width, m._buttonSizes[m._index]]
     m._translationAnimation.control = "start"
