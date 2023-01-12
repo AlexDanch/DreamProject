@@ -2,7 +2,7 @@ sub init()
     m.clean = false
     initViews()
     m.dataSource = [
-        {screenName: "Apple"}
+        {screenName: "AppleAplePAsdasda"}
         {screenName: "Netflix"}
         {screenName: "NBA"}
         {screenName: "Setting"}
@@ -13,7 +13,8 @@ end sub
 
 sub initViews()
      m._transInterpolator = m.top.findNode("transInterpolator")
-     m._translationAnimation = m.top.findNode("translationAnimation")
+     m._widthInterpolator = m.top.findNode("widthInterpolator")
+     m._translationAnimation = m.top.findNode("parallelAnimation")
      m._menuBg = m.top.findNode("menu_Bg")
      m._translationAnimation.observeField("state", "_onStateChange")
      m._elementLayout = m.top.findNode("elementLayout")
@@ -23,7 +24,6 @@ end sub
 
 sub _onStateChange(event)
     state = event.getData()
-    ? "state" state
     if state = "stopped"
         m._elementLayout.setFocus(true) 
     end if
@@ -43,7 +43,6 @@ end sub
 sub onFocusedChild()
     ? "onFocusChild"
     if m.top.hasFocus()
-        ? "tureeasaad"
         childCount = m._elementLayout.getChildCount()
         children = m._elementLayout.getChildren(childCount, 0)
            for each item in  children
@@ -67,8 +66,8 @@ sub _cleanUpOpacity()
 end sub
 
 sub _moveFocusMirror(event)
-    index = event.getData()
-    if index < m.count AND index >= 0
+    m._index = event.getData()
+    if m._index < m.count AND m._index >= 0
         if m.top.moveDirection = "right"
              m._focusMirror.setFocus(true)
             _rightSwing()
@@ -80,40 +79,51 @@ sub _moveFocusMirror(event)
 end sub
 
 sub _leftSwing()
-   leftSwingStep = m.stepToTranslate * (-1)
-   ? "LeftSwing" leftSwingStep
-   _animatePoster(leftSwingStep)
+   index = m._index 
+   ? "index" index
+   if index < 0
+    index = 0
+   end if
+    stepMove =  m._focusMirror.translation[0] - m._buttonSizes[index]
+    ?"leftStepMove" stepMove
+   _animatePoster(stepMove)
 end sub
 
 sub _rightSwing()
-    rightSwingStep = m.stepToTranslate
-    _animatePoster(rightSwingStep)
-  ? "rightSwing" rightSwingStep
+    stepMove =  m._focusMirror.translation[0] + m._buttonSizes[m._index - 1]
+    _animatePoster(stepMove)
+    ? "rightSwing" stepMove
 end sub
 
 sub  _animatePoster(moveStep)
+    ?"m._index" m._index
+    if m._index = 0
+    end if
     trans = m._focusMirror.translation
-    m._transInterpolator.keyValue = [ trans , [m._focusMirror.translation[0] + moveStep, 0 ]]
+    
+    m._transInterpolator.keyValue = [trans , [moveStep , 0 ]]
+    m._widthInterpolator.keyValue = [m._focusMirror.width, m._buttonSizes[m._index]]
     m._translationAnimation.control = "start"
 end sub
 
 sub _populateMenu()
-    buttonSize = _setItemSizing()
-    m.stepToTranslate = buttonSize[0]
-    _setFocusMirror(buttonSize)
-    coutner = 0
+    m._buttonSizes = _setItemSizing()
+    m.stepToTranslate = m._buttonSizes[0]
+    _setFocusMirror(m._buttonSizes[0])
+    counter = 0
     for each element in m.dataSource
         menuElement = CreateObject("roSGNode", "CustomButton")
         menuElement.setFields({
             "color": "#ED2939"
             "buttonOpacity": 0
-            "buttonWidth": buttonSize[0]
-            "buttonHeight": buttonSize[1]
+            "buttonWidth": m._buttonSizes[counter]
+            "buttonHeight": 72
             "buttonText": element.screenName
             "fontSize": 26
             "centerBtn": true
         })
         m._elementLayout.appendChild(menuElement)
+        counter++
     end for 
 end sub
 
@@ -122,27 +132,26 @@ sub _centerMenu()
    m._menuBg.width = layoutSizes.width + 200
    m._menuBg.height = layoutSizes.height + 10
    sizes = m.top.boundingRect()
-   m.top.translation = [(1920 - sizes.width)/2, 50]
+   m.top.translation = [(1920 - sizes.width) / 2, 50]
    m._elementLayout.translation = [(sizes.width - layoutSizes.width) / 2 , (m._menuBg.height - layoutSizes.height) / 2]
 end sub
 
-function _setItemSizing()
-    width = 0
-    rowItemSize= []
+function _setItemSizing() 
+    rowItemSize = []
     for each item in  m.dataSource
         lable = createObject("roSgNode", "CustomLable")
         lable.text = item.screenName
         lable.fontSize = 26
         elementWidth = lable.boundingRect().width
-        rowItemSize.push([elementWidth  + 70, 72])
+        rowItemSize.push(elementWidth  + 70)
     end for
-     buttonSize = rowItemSize.peek()
-     return buttonSize 
+
+     return rowItemSize
 end function 
 
 sub _setFocusMirror(buttonSize)
-    m._focusMirror.width = buttonSize[0]
-    m._focusMirror.height = buttonSize[1] + 10
+    m._focusMirror.width = buttonSize
+    m._focusMirror.height = 72 + 10
     m._focusMirror.translation = [100, 0]
     m._focusMirror.scaleRotateCenter = [m._focusMirror.width / 2, m._focusMirror.height / 2 ]
     m._focusMirror.scale = [1, 1.1]

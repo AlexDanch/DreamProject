@@ -14,7 +14,7 @@
        <field id="itemSelected" type="boolean" alwaysNotify="true"  />
      </interface>
       <children>  
-            <Poster id="background"  uri="pkg:/images/buttonBg.png" blendColor="#b7410e" /> 
+            <Poster id="background"  uri="pkg:/images/ninePaths/buttonBg.png" blendColor="#b7410e" /> 
             <CustomLable id="button_text"  />
       </children>
 

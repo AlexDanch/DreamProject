@@ -12,9 +12,14 @@
           <FocusableLayoutGroup id="elementLayout" layoutDirection="horiz" itemSpacings="[0]">
                  
           </FocusableLayoutGroup>
-      <Animation id="translationAnimation" duration="0.1"  easeFunction="inCubic" >
-        <Vector2DFieldInterpolator id = "transInterpolator" key="[0.0, 1.0]"  fieldToInterp="focusMirror.translation" />
-      </Animation>
+      <ParallelAnimation   id = "parallelAnimation" >
+         <Animation id="translationAnimation" duration="0.1"  easeFunction="inOut" >
+            <Vector2DFieldInterpolator id = "transInterpolator" key="[0.0, 1.0]"  fieldToInterp="focusMirror.translation" />
+          </Animation>
+         <Animation id="widthAnimation" duration="0.1" easeFunction="inOut" >
+             <FloatFieldInterpolator id="widthInterpolator"  key= "[0.0, 1.0]"  fieldToInterp="focusMirror.width" />
+         </Animation>
+      </ParallelAnimation>
     </children>
 
     <script type="text/brightscript" uri="CustomMenu.brs" />
