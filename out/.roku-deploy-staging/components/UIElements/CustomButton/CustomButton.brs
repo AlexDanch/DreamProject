@@ -15,8 +15,10 @@ end sub
 sub onFocusedChild()
      if m.top.hasFocus()
         m.background.blendColor="#800080"
+        m.btnText.color = "#000000"
      else
         m.background.blendColor="#b7410e"
+        m.btnText.color = "#dc143c"
      end if
 end sub
 

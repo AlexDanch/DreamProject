@@ -8,7 +8,7 @@
 
     <children>
        <Poster id="menu_Bg"  uri="pkg:/images/buttonBg.png" blendColor="#800080" opacity="0.6" /> 
-       <Poster id="focusMirror" uri="pkg:/images/ninePaths/focusmirror.9.png"   />
+       <Poster id="focusMirror" uri="pkg:/images/ninePaths/focusmirror_1.9.png"   />
           <FocusableLayoutGroup id="elementLayout" layoutDirection="horiz" itemSpacings="[0]">
                  
           </FocusableLayoutGroup>

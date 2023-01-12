@@ -130,6 +130,7 @@ sub _centerMenu()
    layoutSizes = m._elementLayout.boundingRect()
    m._menuBg.width = layoutSizes.width + 200
    m._menuBg.height = layoutSizes.height + 10
+   
    sizes = m.top.boundingRect()
    m.top.translation = [(1920 - sizes.width) / 2, 50]
    m._elementLayout.translation = [(sizes.width - layoutSizes.width) / 2 , (m._menuBg.height - layoutSizes.height) / 2]
